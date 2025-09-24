@@ -18,7 +18,7 @@ import {
   Language,
   Label,
   LanguageSwitch,
-  LanguageSwitchContainer,
+  LanguageSwitchContainer, FooterContainerContainer,
 } from "./styles";
 
 interface SocialLinkProps {
@@ -47,7 +47,7 @@ const Footer = ({ t }: { t: TFunction }) => {
   return (
     <>
       <FooterSection>
-        <Container>
+        <FooterContainerContainer>
           <Row justify="space-evenly">
             <Col lg={6} md={6} sm={6} xs={6}>
               <Language>{t("Contact")}</Language>
@@ -89,7 +89,7 @@ const Footer = ({ t }: { t: TFunction }) => {
               </LanguageSwitchContainer>
             </Col>
           </Row>
-        </Container>
+        </FooterContainerContainer>
       </FooterSection>
       <Extra>
         <Container border={true}>
