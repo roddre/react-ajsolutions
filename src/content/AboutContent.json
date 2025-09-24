@@ -1,0 +1,16 @@
+{
+  "title": "Business IT Services",
+  "text": "Professional installation of business-grade networking and commercial audio",
+  "section": [
+    {
+      "title": "Network Solutions",
+      "content": "Business grade networking solutions, including Ubiquity systems",
+      "icon": "networking.svg"
+    },
+    {
+      "title": "Audio Solutions",
+      "content": "High-quality installation of audio systems, including Sonos",
+      "icon": "audio.svg"
+    }
+  ]
+}
