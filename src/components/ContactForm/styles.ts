@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContactContainer = styled("div")`
   padding: 5rem 0;
-
+    
   @media only screen and (max-width: 1024px) {
     padding: 3rem 0;
   }
@@ -30,7 +30,7 @@ export const ButtonContainer = styled("div")`
   text-align: end;
   position: relative;
 
-  @media only screen and (max-width: 414px) {
-    padding-top: 0.75rem;
+  @media only screen and (max-width: 766px) {
+      text-align: center;
   }
 `;
