@@ -62,7 +62,7 @@ const Footer = ({ t }: { t: TFunction }) => {
             </Col>
             <Col lg={6} md={6} sm={6} xs={6}>
               <Language>{t("Address")}</Language>
-              <Para>Serving Miami-Dade & Broward County</Para>
+              <Para>Serving Miami-Dade, Broward County & Palm Beach County</Para>
             </Col>
             <Col lg={6} md={6} sm={6} xs={6}>
               <Title>{t("Company")}</Title>
@@ -113,6 +113,10 @@ const Footer = ({ t }: { t: TFunction }) => {
               <SocialLink
                 href="https://www.instagram.com/ajsolutionsmia"
                 src="instagram.svg"
+              />
+              <SocialLink
+                  href="https://share.google/GAw5mdih4vOK418Hr"
+                  src="review.svg"
               />
             </FooterContainer>
           </Row>
