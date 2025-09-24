@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const FooterSection = styled("footer")`
-  background: rgb(241, 242, 243);
-  padding: 2.5rem 0;
+    background: rgb(241, 242, 243);
+    padding: 2.5rem 0;
 `;
 
 export const Title = styled("h4")`
@@ -107,10 +107,6 @@ export const FooterContainer = styled("div")`
 
     @media screen and (max-width: 769px) {
         width: auto;
-
-        a:not(:last-child) {
-            display: none;
-        }
     }
 
     div {
