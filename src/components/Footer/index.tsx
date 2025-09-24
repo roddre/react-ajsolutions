@@ -23,7 +23,8 @@ import {
 
 interface SocialLinkProps {
   href: string;
-  src: string;
+  src?: string;
+  children?: React.ReactNode;
 }
 
 const Footer = ({ t }: { t: TFunction }) => {
@@ -31,16 +32,14 @@ const Footer = ({ t }: { t: TFunction }) => {
     i18n.changeLanguage(language);
   };
 
-  const SocialLink = ({ href, src }: SocialLinkProps) => {
+  const SocialLink = ({ href, children }: SocialLinkProps) => {
     return (
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        key={src}
-        aria-label={src}
       >
-        <SvgIcon src={src} width="45px" height="45px" />
+        {children}
       </a>
     );
   };
@@ -111,13 +110,32 @@ const Footer = ({ t }: { t: TFunction }) => {
             </NavLink>
             <FooterContainer>
               <SocialLink
-                href="https://www.instagram.com/ajsolutionsmia"
-                src="instagram.svg"
-              />
+                  href="https://wa.me/17864689123">
+                  <SvgIcon
+                    src="whatsapp-icon.svg"
+                    aria-label="homepage"
+                    width="37px"
+                    height="37px"
+                  />
+              </SocialLink>
               <SocialLink
-                  href="https://share.google/GAw5mdih4vOK418Hr"
-                  src="review.svg"
-              />
+                href="https://www.instagram.com/ajsolutionsmia">
+                  <SvgIcon
+                      src="instagram.svg"
+                      aria-label="homepage"
+                      width="50px"
+                      height="50px"
+                  />
+              </SocialLink>
+              <SocialLink
+                  href="https://share.google/GAw5mdih4vOK418Hr">
+                <SvgIcon
+                    src="review.svg"
+                    aria-label="homepage"
+                    width="60px"
+                    height="60px"
+                />
+              </SocialLink>
             </FooterContainer>
           </Row>
         </Container>

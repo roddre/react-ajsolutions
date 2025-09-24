@@ -88,6 +88,7 @@ export const Empty = styled("div")`
 export const FooterContainer = styled("div")`
     max-width: 510px;
     width: 100%;
+    gap: 15px;
     display: flex;
     justify-content: flex-end;
     text-align: center;
