@@ -65,8 +65,8 @@ const Home = () => {
             const el = document.getElementById("contact");
             el?.scrollIntoView({ behavior: "smooth" });
         }}
-        delayMs={1000}
-        cooldownHours={0}
+        delayMs={500}
+        cooldownHours={5}
     />
     </Container>
   );
