@@ -1,4 +1,6 @@
 import { lazy } from "react";
+import PromoPopup from "../../common/PromoPopup";
+
 
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
 import AboutContent from "../../content/AboutContent.json";
@@ -48,6 +50,24 @@ const Home = () => {
         content={ContactContent.text}
         id="contact"
       />
+
+    <PromoPopup
+        title="This week only: 10% off installs"
+        message={
+            <>
+                Schedule by Sunday and save <strong>10%</strong>.
+                Use code <code>AJ10</code> for TV mounts, Audio, and Wi-Fi upgrades.
+            </>
+        }
+        ctaText="Get my discount"
+        onCta={() => {
+            // Example: scroll to contact
+            const el = document.getElementById("contact");
+            el?.scrollIntoView({ behavior: "smooth" });
+        }}
+        delayMs={1000}
+        cooldownHours={0}
+    />
     </Container>
   );
 };

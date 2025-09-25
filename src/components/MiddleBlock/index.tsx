@@ -4,6 +4,8 @@ import { Slide } from "react-awesome-reveal";
 import { Button } from "../../common/Button";
 import { MiddleBlockSection, Content, ContentWrapper } from "./styles";
 import {SvgIcon} from "../../common/SvgIcon";
+import BackgroundSlider from "../../common/BackgroundSlider";
+
 
 interface MiddleBlockProps {
   content: string;
@@ -21,6 +23,19 @@ const MiddleBlock = ({ content, button, icon, t }: MiddleBlockProps) => {
   };
   return (
     <MiddleBlockSection>
+      <BackgroundSlider
+          images={[
+              "/img/svg/HomeNetworking-01-Large.jpg",
+              "/img/svg/Network-01-Large.jpeg",
+              "/img/svg/TV-04-Large.jpg",
+              "/img/work/HomeTv.jpeg",
+              "/img/work/New Home TV Install.jpeg",
+              "/img/work/New Home TV Install with TV Stand install.jpeg",
+              "/img/work/Outside TV Install.jpeg",
+              "/img/work/Small business Unifi Switch - Sonos.jpeg",
+              "/img/work/TV and PS5 Wall Mount.jpeg",
+          ]}
+          intervalMs={4000} height="70vh">
       <Slide direction="up" triggerOnce>
         <Row justify="center" align="middle">
           <ContentWrapper>
@@ -38,6 +53,7 @@ const MiddleBlock = ({ content, button, icon, t }: MiddleBlockProps) => {
           </ContentWrapper>
         </Row>
       </Slide>
+      </BackgroundSlider>
     </MiddleBlockSection>
   );
 };

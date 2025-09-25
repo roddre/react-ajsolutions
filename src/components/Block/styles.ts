@@ -8,7 +8,6 @@ export const Content = styled("p")`
 export const Container = styled("div")`
     position: relative;
     max-width: 700px;
-    text-align: center;
 `;
 
 export const TextWrapper = styled("div")`
