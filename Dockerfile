@@ -1,5 +1,5 @@
 # Use the latest LTS version of Node.js
-FROM mirror.gcr.io/library/node:22-alpine AS build
+FROM node:23-alpine as build
  
 WORKDIR /app
 COPY package*.json ./
@@ -8,7 +8,7 @@ COPY . .
 RUN npm run build
 
 # Stage 1 - Serve Frontend Assets
-FROM mirror.gcr.io/library/nginx:stable-alpine
+FROM nginx:alpine
 
 WORKDIR /etc/nginx
 ADD nginx.conf /etc/nginx/nginx.conf
