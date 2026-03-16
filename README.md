@@ -1,112 +1,164 @@
-![landy](https://user-images.githubusercontent.com/48876996/121569479-e179db80-ca31-11eb-8a48-9c3de9b142f3.gif)
+# AJ Solutions React Site
 
-![Landy React Template License](https://img.shields.io/github/license/Adrinlol/landy-react-template)
-![Landy React Template Release Date](https://img.shields.io/github/release-date/Adrinlol/landy-react-template)
-![Landy React TemplateStars](https://img.shields.io/github/stars/Adrinlol/landy-react-template)
-![Landy React Template Language](https://img.shields.io/github/languages/top/Adrinlol/landy-react-template)
-![Landy React Template TypeScript](https://badgen.net/npm/types/tslib)
+Marketing website for AJ Solutions Mia, built with React, TypeScript, `styled-components`, Ant Design, and `react-i18next`.
 
-## Free React landing page template
+The site is a single-page experience focused on home media installs and business/home networking services. It includes:
 
-[Landy][Landy] is an open-source React landing page template written in TypeScript, designed for developers and startups, who want to create a quick and professional landing page for their business or project.
+- A hero section and service content blocks driven by JSON content files
+- A contact form that submits through EmailJS
+- English and Spanish language support
+- A promotional discount popup with localStorage-based cooldown
+- A Docker + Nginx production build
 
-This React template comes with multi-lingual support, smooth animations, set of ready to use sections and most importantly, all of the content is stored in the JSON files, so that you can manage the texts without having any prior knowledge in React.js.
+## Tech stack
 
-## Table of contents
+- React 18
+- TypeScript
+- `react-router-dom` v5
+- `styled-components`
+- Ant Design
+- `react-i18next`
+- EmailJS
 
-- [Features](#features)
-- [Google Lighthouse](#google-lighthouse)
-  - [Performance](#performance)
-  - [Accessibility](#accessibility)
-  - [Best Practices](#best-practices)
-  - [SEO](#seo)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Special Thanks](#special-thanks)
-- [Usage](#usage)
-- [License](#license)
+## Getting started
 
-## Features
+Requirements:
 
-Your project will have everything you need to build a modern single-page React app:
+- Node.js 18+ recommended
+- npm
 
-- 🎁 **Modern** – Template created using the latest features of React (State management using Hooks, Code-Splitting to reduce the bundle size)
+Install dependencies:
 
-- 💻 **Responsive** – Highly responsive and reusable UI components, that change depending on the provided props
+```bash
+npm install
+```
 
-- 🚀 **Fast** – Buttery smooth experience thanks to the implementation of best practices and no third party dependencies, resulting in <b>PERFECT</b> Google Lighthouse scores
+Start the development server:
 
-- 🏷 **TypeScript support** – Landy is written in TypeScript to improve the DX
+```bash
+npm start
+```
 
-- 🌍 **Internationalization** - Prebuilt standalone file that works in every environment and doesn't require reloading the page to translate the content
+Create a production build:
 
-- 🛸 **Routing** - Each file inside the src/pages directory will generate its own route, so you don't have to manually handle the routing
+```bash
+npm run build
+```
 
-- 🤙 **Contact Form** - Contact form written in React Hooks, with uncontrolled form validation to reduce unnecessary performance penalty. You just need to provide the endpoint
+Run tests:
 
-- ⚙️ **Maintenance** - All of the content is stored in the JSON files, so that you can easily manage the content of the website
+```bash
+npm test
+```
 
-## Google Lighthouse
+## Project structure
 
-![1](https://user-images.githubusercontent.com/48876996/121569366-c313e000-ca31-11eb-940c-187f556ff0d6.png)
+```text
+public/                  Static assets, icons, logos, and images
+src/
+  common/                Shared UI building blocks and hooks
+  components/            Page sections like header, footer, content blocks, contact form
+  content/               JSON-managed marketing copy
+  locales/               Translation files
+  pages/Home/            Main landing page composition
+  router/                Route config and lazy-loaded routing
+  styles/                Global styling
+Dockerfile               Multi-stage production image
+nginx.conf               SPA-friendly Nginx config
+```
 
-[Google Lighthouse][Google Lighthouse] is an open-source, automated tool for measuring the quality of web pages. Google Lighthouse audits performance, accessibility and search engine optimization of web pages.
+## Content and customization
 
-### Performance
+Most homepage copy is managed in JSON files under [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content).
 
-Audits for metrics like first paint and time to interactive to determine lag.
+- [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/MiddleBlockContent.json`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/MiddleBlockContent.json): hero copy
+- [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/AboutContent.json`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/AboutContent.json): business IT services section
+- [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/MissionContent.json`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/MissionContent.json): home media section
+- [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/ProductContent.json`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/ProductContent.json): home network section
+- [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/ContactContent.json`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/content/ContactContent.json): contact form heading and intro text
 
-### Accessibility
+Translations live in:
 
-Checks for common issues that may prevent users from accessing your content.
+- [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/locales/en/translation.json`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/locales/en/translation.json)
+- [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/locales/es/translation.json`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/locales/es/translation.json)
 
-### Best Practices
+The homepage is assembled in [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/pages/Home/index.tsx`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/pages/Home/index.tsx).
 
-Looks for everything from HTTPS usage to correct image aspect ratios.
+## Contact form
 
-### SEO 
+The contact form uses EmailJS in [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/common/utils/useForm.tsx`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/common/utils/useForm.tsx).
 
-Checks for best practices to ensure your site is discoverable.
+It currently initializes and sends with hardcoded values:
 
+- Public key: `0LSTKvIpPtUPszRog`
+- Service ID: `service_lz2iaf2`
+- Template ID: `template_6s7f7ek`
 
-## Demo
+If you move this project between environments or accounts, update those values before deploying. A future improvement would be moving them into environment variables.
 
-Check the live demo here 👉️ https://landy-web.netlify.app/
+## Promo popup
 
+The discount popup is implemented in [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/common/PromoPopup/index.tsx`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/common/PromoPopup/index.tsx) and configured on the home page.
 
-### Installation
+Current behavior:
 
-You’ll need to have Node 10.16.0 or later version on your local development machine (but it’s not required on the server). I recommend using the latest LTS version.
+- Shows shortly after page load
+- Offers the `AJ10` discount code
+- Scrolls visitors to the contact section when they click the CTA
+- Uses `localStorage` to avoid re-showing until the cooldown expires
 
-To create a new app, you have to:
+## Navigation and routing
 
-Begin by cloning this repository to establish your own local copy. This process is straightforward and ensures you have all the necessary files and resources at your fingertips. You can find step-by-step instructions in this helpful article: Cloning a [repository on GitHub.com](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository).
+Routes are defined in [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/router/config.ts`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/router/config.ts).
 
-## What's included
+Current routes:
 
-- [antd][antd] - React UI library that contains a set of high quality components.
-- [react-awesome-reveal][react-awesome-reveal] - High performance library that adds reveal animations using the Intersection Observer API.
-- [styled-componets][styled-componets] - Variant on “CSS-in-JS”—which solves many of the problems with traditional CSS.
-- [i18next][i18next] - Internationalization-framework written in and for JavaScript.
+- `/`
+- `/home`
 
-## Special thanks
+The header navigation scrolls to in-page sections for:
 
-[whoooa][whoooa] - Use fantastic, handmade illustrations with easily changeable colors and different styles.
+- About
+- Contact
 
-## Usage
+## Footer and business links
 
-Use it for whatever you want, and be sure to reach out to me on [Twitter](https://twitter.com/Adrinlolx) if you have any questions, or build something cool with it.
+The footer includes:
+
+- Contact email: `A.jsolutionsmia@gmail.com`
+- Service area: Miami-Dade, Broward County, and Palm Beach County
+- WhatsApp link
+- Instagram link
+- Google review link
+- English/Spanish language switcher
+
+See [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/components/Footer/index.tsx`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/components/Footer/index.tsx).
+
+## Docker deployment
+
+Build the production image:
+
+```bash
+docker build -t ajsolutions-react .
+```
+
+Run the container:
+
+```bash
+docker run -p 443:443 ajsolutions-react
+```
+
+Notes:
+
+- The Docker build compiles the React app and serves the output with Nginx.
+- [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/nginx.conf`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/nginx.conf) is configured for single-page app routing via `try_files ... /index.html`.
+- The current container listens on port `443` inside the container.
+
+## Maintenance notes
+
+- The active application entry point is [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/index.tsx`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/src/index.tsx).
+- Package metadata in [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/package.json`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/package.json) still uses `"name": "my-app"`, which could be renamed if you want the package metadata to match the project.
 
 ## License
 
-Licensed under the MIT license.
-
-<!-- prettier-ignore-start -->
-[antd]: https://github.com/ant-design/ant-design
-[react-awesome-reveal]: https://www.npmjs.com/package/react-awesome-reveal
-[styled-componets]: https://github.com/styled-components/styled-components
-[i18next]: https://github.com/i18next/i18next
-[whoooa]: https://www.whoooa.rocks/
-[Landy]: https://www.npmjs.com/package/cra-template-adrinlol
-[Google Lighthouse]: https://developers.google.com/web/tools/lighthouse
-<!-- prettier-ignore-end -->
+This repository includes an MIT [`/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/LICENSE`](/Users/andresrodriguez/Documents/AJSolutionsCode/react-ajsolutions/LICENSE) file.
