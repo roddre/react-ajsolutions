@@ -60,7 +60,7 @@ const Footer = ({ t }: { t: TFunction }) => {
             </Col>
             <Col lg={6} md={6} sm={6} xs={6}>
               <Language>{t("Address")}</Language>
-              <Para>Serving Miami-Dade, Broward County & Palm Beach County</Para>
+              <Para>{t("Serving Miami-Dade, Broward County & Palm Beach County")}</Para>
             </Col>
             <Col lg={6} md={6} sm={6} xs={6}>
               <Title>{t("Company")}</Title>
@@ -72,17 +72,17 @@ const Footer = ({ t }: { t: TFunction }) => {
                 <LanguageSwitch onClick={() => handleChange("en")}>
                   <SvgIcon
                       src="united-states.svg"
-                      aria-label="homepage"
                       width="30px"
                       height="30px"
+                      alt="English"
                   />
                 </LanguageSwitch>
                 <LanguageSwitch onClick={() => handleChange("es")}>
                   <SvgIcon
                       src="spain.svg"
-                      aria-label="homepage"
                       width="30px"
                       height="30px"
+                      alt="Español"
                   />
                 </LanguageSwitch>
               </LanguageSwitchContainer>
@@ -101,9 +101,9 @@ const Footer = ({ t }: { t: TFunction }) => {
               <LogoContainer>
                 <SvgIcon
                   src="MainLogo.png"
-                  aria-label="homepage"
                   width="101px"
                   height="64px"
+                  alt="AJ Solutions Mia logo"
                 />
               </LogoContainer>
             </NavLink>
@@ -112,27 +112,27 @@ const Footer = ({ t }: { t: TFunction }) => {
                   href="https://wa.me/17864689123">
                   <SvgIcon
                     src="whatsapp-icon.svg"
-                    aria-label="homepage"
                     width="37px"
                     height="37px"
+                    alt="WhatsApp"
                   />
               </SocialLink>
               <SocialLink
                 href="https://www.instagram.com/ajsolutionsmia">
                   <SvgIcon
                       src="instagram.svg"
-                      aria-label="homepage"
                       width="50px"
                       height="50px"
+                      alt="Instagram"
                   />
               </SocialLink>
               <SocialLink
                   href="https://share.google/GAw5mdih4vOK418Hr">
                 <SvgIcon
                     src="review.svg"
-                    aria-label="homepage"
                     width="60px"
                     height="60px"
+                    alt="Google reviews"
                 />
               </SocialLink>
             </FooterContainer>

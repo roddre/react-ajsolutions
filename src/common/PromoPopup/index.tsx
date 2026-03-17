@@ -1,78 +1,88 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "../../common/Button";
-import { Modal, Typography } from "antd";
+import { Button } from "../Button";
+import Container from "../Container";
+import {
+  PromoSection,
+  PromoCard,
+  PromoClose,
+  PromoCopy,
+  PromoEyebrow,
+  PromoTitle,
+  PromoText,
+  PromoCode,
+  PromoAction,
+} from "./styles";
 
 type PromoPopupProps = {
-    title?: string;
-    message?: React.ReactNode;
-    ctaText?: string;
-    onCta?: () => void;
-    delayMs?: number;          // show after delay (default 6000)
-    cooldownHours?: number;    // don't show again for this long (default 24)
-    localStorageKey?: string;  // override key if you want multiple promos
+  eyebrowText?: string;
+  title?: string;
+  message?: React.ReactNode;
+  ctaText?: string;
+  onCta?: () => void;
+  dismissText?: string;
+  localStorageKey?: string;
+  cooldownHours?: number;
 };
 
-const DEFAULT_KEY = "promo_discount_last_dismissed_at";
+const DEFAULT_KEY = "promo_banner_last_dismissed_at";
 
 const PromoPopup: React.FC<PromoPopupProps> = ({
-                                                   title = "Limited-time discount",
-                                                   message = (
-                                                       <>
-                                                           Book this week and get <strong>10% off</strong> installation.
-                                                           <br />
-                                                           Mention code <code style={{ fontWeight: 700 }}>AJ10</code> at checkout.
-                                                       </>
-                                                   ),
-                                                   ctaText = "Claim Discount",
-                                                   onCta,
-                                                   delayMs = 6000,
-                                                   cooldownHours = 24,
-                                                   localStorageKey = DEFAULT_KEY,
-                                               }) => {
-    const [open, setOpen] = useState(false);
+  eyebrowText = "Current Offer",
+  title = "Limited-time discount",
+  message = (
+    <>
+      Book this week and get <strong>10% off</strong> installation.
+      <br />
+      Mention code <code style={{ fontWeight: 700 }}>AJ10</code> at checkout.
+    </>
+  ),
+  ctaText = "Claim Discount",
+  onCta,
+  dismissText = "Dismiss offer",
+  localStorageKey = DEFAULT_KEY,
+  cooldownHours = 24,
+}) => {
+  const [hidden, setHidden] = useState(false);
 
-    useEffect(() => {
-        // Check cooldown
-        const lastTs = Number(localStorage.getItem(localStorageKey) || 0);
-        const now = Date.now();
-        const ms = cooldownHours * 60 * 60 * 1000;
-        if (lastTs && now - lastTs < ms) return; // still cooling down
+  useEffect(() => {
+    const lastTs = Number(localStorage.getItem(localStorageKey) || 0);
+    const now = Date.now();
+    const ms = cooldownHours * 60 * 60 * 1000;
 
-        const timer = window.setTimeout(() => setOpen(true), delayMs);
-        return () => window.clearTimeout(timer);
-    }, [delayMs, cooldownHours, localStorageKey]);
+    if (lastTs && now - lastTs < ms) {
+      setHidden(true);
+    }
+  }, [cooldownHours, localStorageKey]);
 
-    const closeWithCooldown = () => {
-        localStorage.setItem(localStorageKey, String(Date.now()));
-        setOpen(false);
-    };
+  const dismiss = () => {
+    localStorage.setItem(localStorageKey, String(Date.now()));
+    setHidden(true);
+  };
 
-    const handleCta = () => {
-        closeWithCooldown();
-        onCta?.();
-    };
+  if (hidden) {
+    return null;
+  }
 
-    return (
-        <Modal
-            open={open}
-            onCancel={closeWithCooldown}
-            footer={null}
-            centered
-        >
-            <Typography.Title level={4} style={{ marginBottom: 8, textAlign: "center"}}>
-                {title}
-            </Typography.Title>
-            <Typography.Paragraph style={{ marginBottom: 16, textAlign: "center"}}>
-                {message}
-            </Typography.Paragraph>
-            <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
-                <Button onClick={closeWithCooldown}>Maybe later</Button>
-                <Button onClick={handleCta}>
-                    {ctaText}
-                </Button>
-            </div>
-        </Modal>
-    );
+  return (
+    <PromoSection>
+      <Container>
+        <PromoCard>
+          <PromoClose type="button" onClick={dismiss} aria-label={dismissText}>
+            ×
+          </PromoClose>
+          <PromoCopy>
+            <PromoEyebrow>{eyebrowText}</PromoEyebrow>
+            <PromoTitle>{title}</PromoTitle>
+            <PromoText>{message}</PromoText>
+            <PromoCode>AJ10</PromoCode>
+          </PromoCopy>
+          <PromoAction>
+            <Button onClick={onCta}>{ctaText}</Button>
+          </PromoAction>
+        </PromoCard>
+      </Container>
+    </PromoSection>
+  );
 };
 
 export default PromoPopup;

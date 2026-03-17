@@ -15,6 +15,8 @@ export interface SvgIconProps {
   src: string;
   width: string;
   height: string;
+  alt?: string;
+  decorative?: boolean;
 }
 
 export interface InputProps {

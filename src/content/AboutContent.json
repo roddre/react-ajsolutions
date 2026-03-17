@@ -1,15 +1,15 @@
 {
-  "title": "Business IT Services",
-  "text": "Professional installation of business-grade networking and commercial audio",
+  "title": "Business Networking & Audio",
+  "text": "Professional business Wi-Fi, networking, and commercial audio installation for offices across Miami-Dade, Broward, and Palm Beach County",
   "section": [
     {
-      "title": "Network Solutions",
-      "content": "Business grade networking solutions, including Ubiquity systems",
+      "title": "Business Wi-Fi & Networking",
+      "content": "Reliable business Wi-Fi and network installation, including Ubiquiti systems",
       "icon": "networking.svg"
     },
     {
-      "title": "Audio Solutions",
-      "content": "High-quality installation of audio systems, including Sonos",
+      "title": "Commercial Audio",
+      "content": "Professional installation of office and multi-room audio systems, including Sonos",
       "icon": "audio.svg"
     }
   ]
