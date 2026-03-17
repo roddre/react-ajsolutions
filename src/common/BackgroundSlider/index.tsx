@@ -32,16 +32,6 @@ const BackgroundSlider: React.FC<BackgroundSliderProps> = ({
         overflow: "hidden",
     };
 
-    const bg: React.CSSProperties = {
-        position: "absolute",
-        top: 0, right: 0, bottom: 0, left: 0,
-        backgroundImage: `url(${images?.[index] ?? ""})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        zIndex: 0,
-    };
-
     const overlay: React.CSSProperties = {
         position: "absolute",
         top: 0, right: 0, bottom: 0, left: 0,
@@ -63,7 +53,25 @@ const BackgroundSlider: React.FC<BackgroundSliderProps> = ({
 
     return (
         <div style={container}>
-            <div style={bg} />
+            {images.map((image, imageIndex) => (
+                <div
+                    key={image}
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0,
+                        backgroundImage: `url("${image}")`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        opacity: imageIndex === index ? 1 : 0,
+                        transition: "opacity 1.1s ease-in-out",
+                        zIndex: 0,
+                    }}
+                />
+            ))}
             <div style={overlay} />
             <div style={content}>{children}</div>
         </div>

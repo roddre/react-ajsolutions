@@ -55,9 +55,6 @@ const MiddleBlock = ({
     <MiddleBlockSection>
       <BackgroundSlider
           images={[
-              "/img/svg/HomeNetworking-01-Large.jpg",
-              "/img/svg/Network-01-Large.jpeg",
-              "/img/svg/TV-04-Large.jpg",
               "/img/work/HomeTv.jpeg",
               "/img/work/New Home TV Install.jpeg",
               "/img/work/New Home TV Install with TV Stand install.jpeg",
@@ -65,7 +62,7 @@ const MiddleBlock = ({
               "/img/work/Small business Unifi Switch - Sonos.jpeg",
               "/img/work/TV and PS5 Wall Mount.jpeg",
           ]}
-          intervalMs={4000} height="78vh">
+          intervalMs={5000} height="78vh">
       <Slide direction="up" triggerOnce>
         <Row justify="center" align="middle">
           <ContentWrapper>

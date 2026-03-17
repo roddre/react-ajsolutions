@@ -54,17 +54,38 @@ export const Eyebrow = styled("span")`
   text-transform: uppercase;
 `;
 
-export const ReviewGrid = styled("div")`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
+export const CarouselWrap = styled("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+`;
+
+export const CarouselViewport = styled("div")`
+  overflow: hidden;
+`;
+
+export const CarouselTrack = styled("div")`
+  display: flex;
+  transition: transform 0.35s ease;
+
+  > div {
+    width: 100%;
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
 
   @media only screen and (max-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    > div {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media only screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
+    > div {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 
@@ -91,4 +112,44 @@ export const Reviewer = styled("strong")`
   color: #000000;
   font-family: "Motiva Sans Bold", serif;
   font-size: 1rem;
+`;
+
+export const CarouselControls = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+`;
+
+export const CarouselButton = styled("button")`
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111111;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+`;
+
+export const CarouselDots = styled("div")`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const CarouselDot = styled("button")<{ active: boolean }>`
+  width: ${({ active }) => (active ? "28px" : "10px")};
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: ${({ active }) => (active ? "#111111" : "rgba(0, 0, 0, 0.18)")};
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 `;
