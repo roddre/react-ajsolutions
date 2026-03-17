@@ -1,0 +1,26 @@
+{
+  "title": "See Our Latest Installations",
+  "text": "A quick look at recent TV mounting, audio, and networking projects. Visit Instagram to watch more reels and completed installs.",
+  "buttonText": "View More on Instagram",
+  "buttonLink": "https://www.instagram.com/ajsolutionsmia",
+  "items": [
+    {
+      "title": "Clean TV Mounting",
+      "subtitle": "Finished living-room install with clean alignment and cable management.",
+      "image": "/img/work/HomeTv.jpeg",
+      "link": "https://www.instagram.com/reel/DUO1r3PDz89/?igsh=MWZ3ZWVrNno3Z3EzNA=="
+    },
+    {
+      "title": "Home Theater Setup",
+      "subtitle": "Large-format TV installation paired with a polished media-console layout.",
+      "image": "/img/work/New Home TV Install with TV Stand install.jpeg",
+      "link": "https://www.instagram.com/reel/DVUbnWaj68z/?igsh=MWtveDRyNTU5OWVhbA=="
+    },
+    {
+      "title": "Business Networking",
+      "subtitle": "Commercial rack and network work for clean, reliable business connectivity.",
+      "image": "/img/work/Small business Unifi Switch - Sonos.jpeg",
+      "link": "https://www.instagram.com/reel/DNy-9R13nMR/?igsh=MTJvZjk3cmdpbmdidA=="
+    }
+  ]
+}

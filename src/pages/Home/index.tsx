@@ -9,6 +9,7 @@ import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
 import TestimonialsContent from "../../content/TestimonialsContent.json";
+import InstallationsContent from "../../content/InstallationsContent.json";
 
 const Contact = lazy(() => import("../../components/ContactForm"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
@@ -16,6 +17,7 @@ const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 const Testimonials = lazy(() => import("../../components/Testimonials"));
+const Installations = lazy(() => import("../../components/Installations"));
 
 const Home = () => {
   const { t } = useTranslation();
@@ -77,6 +79,13 @@ const Home = () => {
         buttonText={TestimonialsContent.buttonText}
         buttonLink={TestimonialsContent.buttonLink}
         items={TestimonialsContent.items}
+      />
+      <Installations
+        title={InstallationsContent.title}
+        text={InstallationsContent.text}
+        buttonText={InstallationsContent.buttonText}
+        buttonLink={InstallationsContent.buttonLink}
+        items={InstallationsContent.items}
       />
       <Contact
         title={ContactContent.title}
